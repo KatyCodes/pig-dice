@@ -9,13 +9,28 @@
     <title>P-P-P-Pig Dice!</title>
   </head>
   <body>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <!-- content starts here.-->
-      <div class="col-md-5"></div>
-      <div class="col-md-5"></div>
-      <!-- main content ends here. -->
-      <div class="col-md-1"></div>
+    <h1 class="jumbotron">Pig Dice</h1>
+    <div class="container">
+      <!-- Player Name entry form -->
+      <form>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="player1Name">Player 1 enter your name:</label>
+              <input class="form-control" type="text" id="player1Name" placeholder="Enter your name." required></input>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="player2Name">Player 2 enter your name:</label>
+              <input class="form-control" type="text" id="player2Name" placeholder="Enter your name." required></input>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+        <button id="playerNameSubmit" type="submit" class="btn btn-classic">LET'S PLAY PIG DICE !</button>
+      </form>
     </div>
   </body>
 </html>

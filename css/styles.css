@@ -1,0 +1,11 @@
+form {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+}
+
+.col-md-5 {
+  border: 2px solid black;
+}
