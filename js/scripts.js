@@ -7,6 +7,8 @@ function Player(playerName, score) {
   playersArray.push(this);
 }
 
+
+
 // UI logic
 $(document).ready(function() {
   // Player name submit button
@@ -18,8 +20,11 @@ $(document).ready(function() {
     var player1 = new Player(player1Name, 0)
     var player2 = new Player(player2Name, 0)
 
-
-
   });
+  $("#diceRoll").click(function(event) {
+    event.preventDefault();
+    console.log(1 + Math.floor(Math.random() * 6));
+  });
+
 
 });
