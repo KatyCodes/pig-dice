@@ -8,6 +8,18 @@ function Player(playerName, score) {
   playersArray.push(this);
 }
 
+Array.prototype.sum = function(playersArray) {
+  return this.reduce(function(a,b) {return a + b});
+}
+// var rollSum = function(turnRollArray) {
+//   var total = 0
+//   turnRollArray.forEach(function(x){
+//     total + x;
+//   });
+//   return total;
+// }
+
+
 
 
 // UI logic
@@ -27,7 +39,7 @@ $(document).ready(function() {
     $("#rollResult").show();
     var randomRoll = (1 + Math.floor(Math.random() * 6));
     turnRollArray.push(randomRoll);
-    console.log(turnRollArray);
+    console.log(turnRollArray.sum());
     $("#rollResult").text(randomRoll);
   });
 
