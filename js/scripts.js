@@ -9,9 +9,7 @@ function Player(playerName, score) {
 }
 
 
-
-
-Array.prototype.sum = function(playersArray) {
+Array.prototype.sum = function() {
   return this.reduce(function(a,b) {return a + b});
 }
 
@@ -26,6 +24,7 @@ $(document).ready(function() {
     var player2Name = $("#player2Name").val();
     var player1 = new Player(player1Name, 0);
     var player2 = new Player(player2Name, 0);
+    $("#player1Display").text(playersArray[0].playerName).show();
 
   });
 
@@ -40,12 +39,35 @@ $(document).ready(function() {
       $("#turnTotal").text(turnRollArray.sum());
     } else {
     alert("You lost this round! NO POINTS FOR YOU!");
-      turnRollArray = [];
+      turnRollArray = [0];
       $("#turnTotal").text(turnRollArray)
-    return;
+      changePlayers();
   }
   });
 
+// player 1
+  $("#endTurnBtn").click(function(event){
+    changePlayers();
+});
 
+  function changePlayers() {
+    if ($("#player1Display").is(":visible")) {
+    alert("Congrats, " + playersArray[0].playerName + ", you got " + turnRollArray.sum() +  " points!");
+    playersArray[0].score = (playersArray[0].score += turnRollArray.sum());
+    turnRollArray = [0];
+    $("#turnTotal").text(turnRollArray)
+    $("#player2Display").text(playersArray[1].playerName).show();
+    $("#player1Display").hide();
+    console.log(playersArray[0].score);
+  } else if ($("#player2Display").is(":visible")){
+    alert("Congrats, " + playersArray[1].playerName + ", you got " + turnRollArray.sum() +  " points!");
+    playersArray[1].score = (playersArray[1].score += turnRollArray.sum());
+    turnRollArray = [0];
+    $("#turnTotal").text(turnRollArray)
+    $("#player1Display").show();
+    $("#player2Display").hide();
+    console.log(playersArray[1].score);
+  }
+  }
 
 });

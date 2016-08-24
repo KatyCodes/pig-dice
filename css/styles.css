@@ -23,3 +23,11 @@ button {
   border: 2px solid black;
 
 }
+
+#player1Display {
+  display: none;
+}
+
+#player2Display {
+  display: none;
+}
