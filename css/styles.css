@@ -9,3 +9,8 @@ button {
 .col-md-5 {
   border: 2px solid black;
 }
+
+#rollResult {
+  border: 2px solid black;
+  display: none;
+}

@@ -1,5 +1,6 @@
 // Bussiness logic
 var playersArray = []
+var turnRollArray = []
 
 function Player(playerName, score) {
   this.playerName= playerName;
@@ -23,7 +24,11 @@ $(document).ready(function() {
   });
   $("#diceRoll").click(function(event) {
     event.preventDefault();
-    console.log(1 + Math.floor(Math.random() * 6));
+    $("#rollResult").show();
+    var randomRoll = (1 + Math.floor(Math.random() * 6));
+    turnRollArray.push(randomRoll);
+    console.log(turnRollArray);
+    $("#rollResult").text(randomRoll);
   });
 
 
