@@ -24,7 +24,7 @@ $(document).ready(function() {
     var player2Name = $("#player2Name").val();
     var player1 = new Player(player1Name, 0);
     var player2 = new Player(player2Name, 0);
-    $("#player1Display").text(playersArray[0].playerName).show();
+    $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
 
   });
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
       turnRollArray.push(randomRoll);
       $("#turnTotal").text(turnRollArray.sum());
     } else {
-    alert("You lost this round! NO POINTS FOR YOU!");
+    alert("You rolled a 1! You lost this round! NO POINTS FOR YOU!");
       turnRollArray = [0];
       $("#turnTotal").text(turnRollArray)
       changePlayers();
@@ -56,7 +56,7 @@ $(document).ready(function() {
     playersArray[0].score = (playersArray[0].score += turnRollArray.sum());
     turnRollArray = [0];
     $("#turnTotal").text(turnRollArray)
-    $("#player2Display").text(playersArray[1].playerName).show();
+    $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
     $("#player1Display").hide();
     console.log(playersArray[0].score);
   } else if ($("#player2Display").is(":visible")){
