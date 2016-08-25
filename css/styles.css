@@ -22,6 +22,17 @@ button {
 .gameStuff {
   display: none;
 }
+
+#navBarList {
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #0088cc;
+}
+
+#navBarList:hover {
+  text-decoration: underline;
+}
+
 #rollResult {
   border: 2px solid black;
   display: none;
