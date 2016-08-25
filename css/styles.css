@@ -6,6 +6,11 @@ button {
   margin: 10px;
 }
 
+.jumbotron{
+  text-align: center;
+  font-size: 4em;
+  background-color: #ff6699;
+}
 .col-md-5 {
   border: 2px solid black;
 }
