@@ -4,6 +4,7 @@ form {
 
 button {
   margin: 10px;
+  align-self: center;
 }
 
 li {
@@ -22,6 +23,7 @@ li {
 
 .showTurnTotal {
   display: none;
+  font-size: 200%;
 }
 
 .gameStuff {
@@ -48,30 +50,40 @@ li {
 
 #turnTotalStuff {
   text-align: center;
+
 }
 
 #turnTotal {
     text-align: center;
     border: 2px solid black;
+    font-size: 3em;
 }
 
 #player1Display {
   display: none;
   text-align: center;
   border: 2px solid black;
+  color: #ff6699;
+  background-color: black;
 }
 
 #player2Display {
   display: none;
   text-align: center;
   border: 2px solid black;
+  color: #ff6699;
+  background-color: black;
 }
 
 
 #turnTotalStuff {
   border: 2px dashed black;
-}
+  }
 
 #imgID {
   margin-left: 30%;
+}
+
+.row {
+  text-align: center;
 }

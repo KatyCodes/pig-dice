@@ -40,8 +40,7 @@
       </div>
     </div>
     <h1 class="jumbotron">
-      <img src="img/piggy.gif">
-      Pig Dice<img src="img/piggy2.gif">
+      <img src="img/piggy.gif">Pig Dice <img src="img/piggy2.gif">
     </h1>
 
     <div class="container">
@@ -77,29 +76,35 @@
           <div class="col-md-1"></div>
         </div>
         <br>
-        <h3 id="player1Display"></h3>
-        <h3 id="player2Display"></h3>
-        <!-- Roll Button and result -->
         <div class="row">
-          <div class="col-md-1"></div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-success" id="diceRoll">Roll!</button>
-                <h3 id="rollResult"></h3>
-            </div>
-            <div class="col-md-4">
-              <button type="submit" class="btn btn-danger" id="endTurnBtn">End Turn!</button>
-              <h1 id="rollResult"></h1>
-            </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+          <h3 id="player1Display"></h3>
+          <h3 id="player2Display"></h3></div>
           <div class="col-md-1"></div>
         </div>
+        <!-- Roll Button and result -->
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-success" id="diceRoll">Roll!</button>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-danger" id="endTurnBtn">End Turn!</button>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+          <h3><span id="rollResult"></span></h3>
+        </div>
+
+
         <div id="turnTotalStuff" class="row">
           <h3>Turn total:</h3>
           <h3><span id="turnTotal"></span></h3>
         </div>
         <div id="imgID">
-
         <img src="img/happyPigMan.gif">
-
         </div>
       </div>
   </div>

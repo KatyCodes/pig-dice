@@ -48,10 +48,10 @@ $(document).ready(function() {
 // player 1
   $("#endTurnBtn").click(function(event){
     changePlayers();
-    if (playersArray[0].score >= 10){
+    if (playersArray[0].score >= 100){
       alert(playersArray[0].playerName + " wins!!");
       document.location.reload(true);
-    } else if (playersArray[1].score >= 10) {
+    } else if (playersArray[1].score >= 100) {
       alert(playersArray[1].playerName + " wins!!");
       document.location.reload(true);
   }
@@ -69,7 +69,7 @@ $(document).ready(function() {
         turnRollArray = [0];
         $("#turnTotal").text(turnRollArray);
         setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
-        $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
+        setTimeout(function() {$("#player2Display").text(playersArray[1].playerName + "'s turn").show();}, 100 );
         $("#player1Display").hide();
         showNamesAndScores();
           }
@@ -77,7 +77,7 @@ $(document).ready(function() {
         turnRollArray = [0];
         $("#turnTotal").text(turnRollArray);
         setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
-        $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
+        setTimeout(function() {$("#player1Display").text(playersArray[0].playerName + "'s turn").show();}, 100 );
         $("#player2Display").hide();
         showNamesAndScores();
       }
