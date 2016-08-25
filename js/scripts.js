@@ -46,6 +46,11 @@ $(document).ready(function() {
 // player 1
   $("#endTurnBtn").click(function(event){
     changePlayers();
+    if (playersArray[0].score >= 100){
+      alert("Player 1 wins!!")
+    } else if (playersArray[1].score >= 100) {
+      alert("Player 2 wins!!")
+  }
   });
 
   function showNamesAndScores() {
@@ -63,7 +68,6 @@ $(document).ready(function() {
         $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
         $("#player1Display").hide();
         showNamesAndScores();
-
           }
       else if ($("#player2Display").is(":visible")){
         turnRollArray = [0];
@@ -96,6 +100,7 @@ $(document).ready(function() {
       console.log(playersArray[1].score);
       }
     }
+
 
 
 
