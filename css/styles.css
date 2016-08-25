@@ -10,9 +10,11 @@ button {
   text-align: center;
   font-size: 4em;
   background-color: #ff6699;
+  font-family: 'Bungee Shade', cursive;
 }
 .col-md-5 {
   border: 2px solid black;
+  
 }
 
 .showTurnTotal {
@@ -38,15 +40,27 @@ button {
   display: none;
 }
 
+#turnTotalStuff {
+  text-align: center;
+}
+
 #turnTotal {
   border: 2px solid black;
-
+  text-align: center;
 }
 
 #player1Display {
   display: none;
+  text-align: center;
+  border: 2px solid black;
 }
 
 #player2Display {
   display: none;
+  text-align: center;
+  border: 2px solid black;
+}
+
+li {
+  color:black;
 }

@@ -48,11 +48,11 @@ $(document).ready(function() {
 // player 1
   $("#endTurnBtn").click(function(event){
     changePlayers();
-    if (playersArray[0].score >= 100){
-      alert("Player 1 wins!!");
+    if (playersArray[0].score >= 10){
+      alert(playersArray[0].playerName + " wins!!");
       document.location.reload(true);
-    } else if (playersArray[1].score >= 100) {
-      alert("Player 2 wins!!");
+    } else if (playersArray[1].score >= 10) {
+      alert(playersArray[1].playerName + " wins!!");
       document.location.reload(true);
   }
   });
