@@ -14,6 +14,7 @@ Array.prototype.sum = function() {
 }
 
 
+
 // UI logic
 $(document).ready(function() {
   // Player name submit button
@@ -38,12 +39,8 @@ $(document).ready(function() {
       turnRollArray.push(randomRoll);
       $("#turnTotal").text(turnRollArray.sum());
     } else {
-    alert("You rolled a 1! You lost this round! NO POINTS FOR YOU!");
-      turnRollArray = [0];
-      $("#turnTotal").text(turnRollArray)
-      changePlayers();
-  }
-  });
+      rollOneChangePlayers();
+  };
 
 // player 1
   $("#endTurnBtn").click(function(event){
@@ -69,5 +66,41 @@ $(document).ready(function() {
     console.log(playersArray[1].score);
   }
   }
+
+
+
+  // setTimeout(myTimer, 1000);
+
+function rollOneChangePlayers() {
+    if ($("#player1Display").is(":visible")) {
+
+          turnRollArray = [0];
+          $("#turnTotal").text(turnRollArray)
+          setTimeout(myTimer, 1000);
+          $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
+          $("#player1Display").hide();
+          myTimer();
+        }
+      else if ($("#player2Display").is(":visible")){
+        turnRollArray = [0];
+        $("#turnTotal").text(turnRollArray)
+        $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
+        $("#player2Display").hide();
+      }
+    }
+
+    function myTimer() {
+        alert("You rolled a 1! You lost this round! NO POINTS FOR YOU!");
+      }
+
+
+
+
+
+
+
+
+
+});
 
 });
