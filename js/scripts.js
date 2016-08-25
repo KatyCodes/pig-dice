@@ -26,7 +26,7 @@ $(document).ready(function() {
     var player1 = new Player(player1Name, 0);
     var player2 = new Player(player2Name, 0);
     $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
-    showScores();
+    showNamesAndScores();
   });
 
   $("#diceRoll").click(function(event) {
@@ -48,6 +48,13 @@ $(document).ready(function() {
     changePlayers();
   });
 
+  function showNamesAndScores() {
+    $("#playerOneName").text(playersArray[0].playerName);
+    $("#playerTwoName").text(playersArray[1].playerName);
+    $("#playerOneTotalScore").text(playersArray[0].score);
+    $("#playerTwoTotalScore").text(playersArray[1].score);
+  }
+
   function rollOneChangePlayers() {
       if ($("#player1Display").is(":visible")) {
         turnRollArray = [0];
@@ -55,7 +62,7 @@ $(document).ready(function() {
         setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
         $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
         $("#player1Display").hide();
-      showScores();
+        showNamesAndScores();
 
           }
       else if ($("#player2Display").is(":visible")){
@@ -64,7 +71,7 @@ $(document).ready(function() {
         setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
         $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
         $("#player2Display").hide();
-        showScores();
+        showNamesAndScores();
       }
     }
 
@@ -77,7 +84,7 @@ $(document).ready(function() {
       $("#player1Display").hide();
       $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
       console.log(playersArray[0].score);
-      showScores();
+      showNamesAndScores();
     } else {
       alert("Congrats, " + playersArray[1].playerName + ", you got " + turnRollArray.sum() +  " points!");
       playersArray[1].score = (playersArray[1].score += turnRollArray.sum());
@@ -85,15 +92,12 @@ $(document).ready(function() {
       $("#turnTotal").text(turnRollArray)
       $("#player2Display").hide();
       $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
-      showScores();
+      showNamesAndScores();
       console.log(playersArray[1].score);
       }
     }
 
-    function showScores() {
-      $("#playerOneTotalScore").text(playersArray[0].score);
-      $("#playerTwoTotalScore").text(playersArray[1].score);
-    }
+
 
 
 
