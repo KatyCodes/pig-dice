@@ -14,6 +14,9 @@ button {
   display: none;
 }
 
+.gameStuff {
+  display: none;
+}
 #rollResult {
   border: 2px solid black;
   display: none;

@@ -27,6 +27,8 @@ $(document).ready(function() {
     var player2 = new Player(player2Name, 0);
     $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
     showNamesAndScores();
+    $("form").hide();
+    $(".gameStuff").show();
   });
 
   $("#diceRoll").click(function(event) {
