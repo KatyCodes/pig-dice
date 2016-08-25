@@ -26,7 +26,7 @@ $(document).ready(function() {
     var player1 = new Player(player1Name, 0);
     var player2 = new Player(player2Name, 0);
     $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
-
+    showScores();
   });
 
   $("#diceRoll").click(function(event) {
@@ -48,6 +48,26 @@ $(document).ready(function() {
     changePlayers();
   });
 
+  function rollOneChangePlayers() {
+      if ($("#player1Display").is(":visible")) {
+        turnRollArray = [0];
+        $("#turnTotal").text(turnRollArray);
+        setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
+        $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
+        $("#player1Display").hide();
+      showScores();
+
+          }
+      else if ($("#player2Display").is(":visible")){
+        turnRollArray = [0];
+        $("#turnTotal").text(turnRollArray);
+        setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
+        $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
+        $("#player2Display").hide();
+        showScores();
+      }
+    }
+
   function changePlayers() {
     if ($("#player1Display").is(":visible")) {
       playersArray[0].score = (playersArray[0].score += turnRollArray.sum());
@@ -57,35 +77,28 @@ $(document).ready(function() {
       $("#player1Display").hide();
       $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
       console.log(playersArray[0].score);
+      showScores();
     } else {
       alert("Congrats, " + playersArray[1].playerName + ", you got " + turnRollArray.sum() +  " points!");
       playersArray[1].score = (playersArray[1].score += turnRollArray.sum());
       turnRollArray = [0];
       $("#turnTotal").text(turnRollArray)
       $("#player2Display").hide();
-      $("#player1Display").text(playersArray[1].playerName + "'s turn").show();
+      $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
+      showScores();
       console.log(playersArray[1].score);
-    }
-  }
-
-
-function rollOneChangePlayers() {
-    if ($("#player1Display").is(":visible")) {
-          turnRollArray = [0];
-          $("#turnTotal").text(turnRollArray);
-          setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
-          $("#player2Display").text(playersArray[1].playerName + "'s turn").show();
-          $("#player1Display").hide();
-
-        }
-      else if ($("#player2Display").is(":visible")){
-        turnRollArray = [0];
-        $("#turnTotal").text(turnRollArray);
-        setTimeout(function() { alert("YOU ROLLED A 1- NO POINTS!!"); }, 50 );
-        $("#player1Display").text(playersArray[0].playerName + "'s turn").show();
-        $("#player2Display").hide();
       }
     }
+
+    function showScores() {
+      $("#playerOneTotalScore").text(playersArray[0].score);
+      $("#playerTwoTotalScore").text(playersArray[1].score);
+    }
+
+
+
+
+
 
 
 
