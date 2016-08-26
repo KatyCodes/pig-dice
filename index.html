@@ -5,11 +5,44 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" text="text/css">
     <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <title>P-P-P-Pig Dice!</title>
   </head>
   <body>
-    <h1 class="jumbotron">Pig Dice</h1>
+    <header class="page-header">
+      <ul id="navBarList" class="nav nav-pills pull-right">
+        <li data-toggle="modal" data-target="#myModal">Game Rules</li>
+      </ul>
+    <!-- "Rules" Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content" id="aboutPage">
+          <div class="modal-header">
+            <h2 class="modal-title">Pig Dice Rules!</h2>
+          </div>
+          <div class="modal-body">
+            <h4>First Player to 100 pts wins!</h4>
+            <ul>
+              <li>Player 1 goes first</li>
+              <li>Click the "Roll" button to roll a virtual 6-sided die</li>
+              <li>Values for 2-6 get added to the "Roll Total" value for each turn</li>
+              <li>To end turn, select "End Turn" button- this will add the "Roll Total" to the player's score</li>
+              <li>If you roll a 1, your turn is over and you get NO POINTS</li>
+              <li>Have fun! :D</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="jumbotron">
+      <img src="img/piggy.gif">Pig Dice <img src="img/piggy2.gif">
+    </h1>
+
     <div class="container">
       <!-- Player Name entry form -->
       <form id="playerNameForm">
@@ -29,27 +62,51 @@
           </div>
           <div class="col-md-1"></div>
         </div>
-        <button id="playerNameSubmit" type="submit" class="btn btn-classic">LET'S PLAY PIG DICE ! </button>
+        <button id="playerNameSubmit" type="submit" class="btn btn-primary">LET'S PLAY PIG DICE ! </button>
       </form>
-      <p id="player1Display"></p>
-      <p id="player2Display"></p>
-      <!-- Roll Button and result -->
-      <div class="row">
-        <div class="col-md-1"></div>
+      <div class="gameStuff">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            <h3><span id="playerOneName"></span>'s total Score: <span id="playerOneTotalScore"></span></h3>
+          </div>
+          <div class="col-md-5">
+            <h3><span id="playerTwoName"></span>'s total Score: <span id="playerTwoTotalScore"></span></h3>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4"></div>
           <div class="col-md-4">
-              <button type="submit" id="diceRoll">Roll!</button>
-              <h3 id="rollResult"></h3>
+          <h3 id="player1Display"></h3>
+          <h3 id="player2Display"></h3></div>
+          <div class="col-md-1"></div>
+        </div>
+        <!-- Roll Button and result -->
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-success" id="diceRoll">Roll!</button>
           </div>
           <div class="col-md-4">
-            <button type="submit" id="endTurnBtn">End Turn!</button>
-            <h3 id="rollResult"></h3>
+            <button type="submit" class="btn btn-danger" id="endTurnBtn">End Turn!</button>
           </div>
-        <div class="col-md-1"></div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+          <h3><span id="rollResult"></span></h3>
+        </div>
+
+
+        <div id="turnTotalStuff" class="row">
+          <h3>Turn total:</h3>
+          <h3><span id="turnTotal"></span></h3>
+        </div>
+        <div id="imgID">
+        <img src="img/happyPigMan.gif">
+        </div>
       </div>
-      <div class="row">
-        <h3>Turn total:</h3>
-        <h3 id="turnTotal"></h3>
-      </div>
-    </div>
+  </div>
   </body>
 </html>
